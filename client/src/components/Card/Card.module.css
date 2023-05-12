@@ -1,0 +1,37 @@
+.Carta {
+    border: 1px solid #39ff14;
+    width: min-content;
+    height: min-content;
+    background-image: url('https://i.pinimg.com/originals/7a/7d/64/7a7d644b152f55e216e4c2d2fb565ea9.jpg');
+    margin-left: 1em;
+    margin-right: 1em;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 1em;
+    margin-top: 200px;
+}
+
+.texto {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .btnx {
+    display: flex;
+    margin-left: 260px;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+ 
+  .btnx:hover{
+    background-color:#39ff14;
+    border-radius: 5px;
+  }
+ 
+  .img {
+    border: 1px solid black;
+    border-radius: 1em;
+    width: 80%;
+    height: 80%;
+ 
+  }
