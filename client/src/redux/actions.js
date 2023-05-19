@@ -3,31 +3,28 @@ import axios from 'axios';
 
 export const addFav = (character) => {
     const endpoint = 'http://localhost:3001/rickandmorty/fav';
-    return (dispatch) => {
-       axios.post(endpoint, character).then(({ data }) => {
+    return async  (dispatch) => {
+       let response = await axios.post(endpoint, character)
           return dispatch({
              type: 'ADD_FAV',
-             payload: data,
+             payload: response.data, 
           });
-       });
+    
     };
  };
  
-    // return {
-    //     type: 'ADD_FAVORITE',
-    //     payload: character
-    // }
+
 
 
 export const removeFav = id => {
     const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
-    return (dispatch) => {
-        axios.delete(endpoint).then(({data})=>{
+    return async (dispatch) => {
+        let response = await axios.delete(endpoint)
             return dispatch ({
                 type: 'REMOVE_FAVORITE',
-                payload: data,
+                payload: response.data,
             })
-        })
+       
     }  
 }
 export const filterCards = (gender) => {

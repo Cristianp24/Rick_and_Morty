@@ -6,7 +6,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 export default function Detail () {
   const { detailId } = useParams();
   const navigate = useNavigate();
-  const [character, setCharacter] = useState({});
+  const [characters, setCharacter] = useState({});
    
 
     function navegar() {
@@ -34,14 +34,14 @@ export default function Detail () {
          <div>
             <button  onClick={navegar}  >Ir a Home</button>
          
-            <h1>Name: {character.name}</h1>
+            <h1>Name: {characters.name}</h1>
             <div>
-                <h2>STATUS: {character.status}</h2>
-                <h2>ESPECIE: {character.species}</h2>
-                <h2>GÉNERO: {character.gender}</h2>
-                <h2>ORIGEN: {character.origin?.name}</h2>
+                <h2>STATUS: {characters.status}</h2>
+                <h2>ESPECIE: {characters.species}</h2>
+                <h2>GÉNERO: {characters.gender}</h2>
+                <h2>ORIGEN: {characters.origin?.name}</h2>
             </div>
-            <img src={character.image} alt="img not found"/>
+            <img src={characters.image} alt="img not found"/>
         </div>
     )
 }
