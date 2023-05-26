@@ -1,33 +1,55 @@
 
-const express = require('express');
-const router = require('./routes');
+const app = require('./app');
+const {conn} = require('./DB_connection');
 const PORT = 3001;
-const server = express();
+
+app.listen(PORT, async () => {
+    await conn.sync({force:true});
+    console.log('Server raised in port      ' + PORT);
+})
+
+// conn.sync({force:true}).then(() =>{
+//     app.listen(PORT, (req,res) => {
+//         console.log(`Server on port ${PORT}`);
+//     })
+// })
 
 
 
-server.use(express.json())
 
-server.listen(PORT, () => {
-    console.log('Server raised in port: ' + PORT);
- });
+// const express = require('express');
+// const router = require('./routes');
+// const PORT = 3001;
+// const server = express();
+// const { conn } = require('./DB_connection');
 
-server.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept'
-        );
-        res.header(
-            'Access-Control-Allow-Methods',
-            'GET, POST, OPTIONS, PUT, DELETE'
-            );
-            next();
-        });
-        server.use('/rickandmorty/', router)
+// conn.sync({ force: true}).then(()=>{
+//     server.listen(PORT, () => {
+//         console.log('Server raised in port: ' + PORT);
+//      });
+    
+// })
 
-        module.exports = server;
+// server.use(express.json())
+
+
+
+// server.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Credentials', 'true');
+//     res.header(
+//         'Access-Control-Allow-Headers',
+//         'Origin, X-Requested-With, Content-Type, Accept'
+//         );
+//         res.header(
+//             'Access-Control-Allow-Methods',
+//             'GET, POST, OPTIONS, PUT, DELETE'
+//             );
+//             next();
+//         });
+//         server.use('/rickandmorty/', router)
+
+//         module.exports = server;
 
 
 

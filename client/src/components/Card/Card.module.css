@@ -1,5 +1,5 @@
 .Carta {
-    border: 1px solid #39ff14;
+    border: 1px solid  rgb(57, 178, 24);
     width: min-content;
     height: min-content;
     background-image: url('https://i.pinimg.com/originals/7a/7d/64/7a7d644b152f55e216e4c2d2fb565ea9.jpg');
@@ -19,12 +19,14 @@
   .btnx {
     display: flex;
     margin-left: 260px;
-    margin-top: 10px;
+    margin-top: -15px;
     margin-right: 10px;
+
+
   }
  
   .btnx:hover{
-    background-color:#39ff14;
+    background-color: rgb(57, 178, 24);
     border-radius: 5px;
   }
  
@@ -34,4 +36,25 @@
     width: 80%;
     height: 80%;
  
+  }
+
+  .handle {
+    display: flex;
+    margin-left: 15px;
+    margin-top: 15px;
+   
+  }
+
+  .name {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: black;
+    padding: 5px;
+    text-decoration: underline;
+
+  }
+
+  .name:hover {
+    color: green;
+    text-decoration:underline;
   }

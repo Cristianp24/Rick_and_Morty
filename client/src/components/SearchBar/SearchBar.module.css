@@ -1,24 +1,32 @@
 .input {
-    padding: 5px;
-    margin-left: 450px;
-    margin-top: 15px;
-    justify-content: space-evenly;
+    padding: 15px;
+    margin-left:500px ;
+    margin-top: 22px;
+    justify-content: space-around;
     width: 200px;
     align-items: center;
     background-color: azure;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #1a9404;
     font-weight: bold;
+    height: 30px;
 }
 
 .boton {
-    padding: 5px;
-    margin-top: 15px;
-    margin-left: 20px;
-    background-color: rgb(44, 46, 49) ;
-    color: #39ff14;
-    border: solid #39ff14 1px;
-    border-radius: 10px;
+    background-color:transparent;
+    border: none;
+    color: rgb(57, 178, 24);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: medium;
+    font: 100;
+    font-family: fantasy;
+    
 } 
 
 .boton:hover {

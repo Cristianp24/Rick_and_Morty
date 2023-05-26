@@ -2,11 +2,11 @@ const initialState = { myFavorites: [], allCharacters: [] };
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case "ADD_FAV":
+    case 'ADD_FAV':
       return { ...state, myFavorites: payload, allCharacters: payload };
 
 
-    case "REMOVE_FAVORITE":
+    case 'REMOVE_FAVORITE':
 
     return { ...state, myFavorites: payload };
 
@@ -17,19 +17,20 @@ const reducer = (state = initialState, { type, payload }) => {
       return { ...state, myFavorites: filtro };
       
       case 'ORDER':
-        let orden = [...state.allCharacters];
-        let orderedChars = orden.sort((a,b)=>{
-          if(a.id > b.id) {
-            return payload === 'Ascendente' ? 1 : -1
-          } else if (a.id < b.id) {
-            return payload === 'Descendente' ? -1 : 1
-          } 
-          else return 0;
+        let sorted = state.allCharacters.sort((a,b)=>{
+            if (a.id > b.id) return payload === "Ascendente" ? 1 : -1;
+            if (a.id < b.id) return payload === "Descendente" ? -1 : 1;
+            else return 0
         })
-       
-    default :
-      return { ...state };
-  }
-};
+
+        return{
+            ...state,
+            myFavorites: sorted
+        };
+
+    default:
+        return {...state};
+}
+}
 
 export default reducer;

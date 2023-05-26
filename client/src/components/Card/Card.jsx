@@ -29,16 +29,17 @@ export function Card(props) {
     <div className={style.Carta}>
      {
      isFav ? (
-      <button onClick={handleFavorite}>❤️</button>
+      <button className={style.handle} onClick={handleFavorite}>❤️</button>
    ) : (
-      <button onClick={handleFavorite}>🤍</button>
+      <button className={style.handle} onClick={handleFavorite}>🤍</button>
+      
    )}
 
       <button className={style.btnx} onClick={() => onClose(props.id)}>
         X
       </button>
       <Link to={`/detail/${props.id}`}>
-      <h2>{props.name}</h2>
+      <h2 className={style.name}>{props.name}</h2>
       </Link>
       <img
         className={style.img}

@@ -18,6 +18,8 @@ export default function Cards(props) {
                gender={character.gender}
                image={character.image}
                onClose={onClose}
+               origin={character.origin?.name}
+               status={character.status}
             />
             )}
    </div>

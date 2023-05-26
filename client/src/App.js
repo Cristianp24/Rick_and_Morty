@@ -32,14 +32,14 @@ function App() {
     const { username: email, password } = userData;
     const URL = "http://localhost:3001/rickandmorty/login/";
     let response = await axios(URL+`?email=${email}&password=${password}`);
-    // console.log(response.data);
+     console.log(response.data);
     try {
       const { access } = response.data;
       setAccess(access);
       if (!access) alert("Access denied");
       access && navigate("/home");
     } catch (error) {
-      console.log("Axios Error", error);
+      console.log("Axios xxx Error", error);
     }
   };
 
@@ -53,6 +53,10 @@ function App() {
       alert("AXIOS ERROR", error);
     }
   }
+  const random = () => {
+    const idRandom = Math.floor(Math.random()*827)
+    onSearch(idRandom)
+  }
 
   function onClose(id) {
     let found = characters.find((character) => character.id === id);
@@ -62,7 +66,7 @@ function App() {
 
   return (
     <div className="App">
-      {pathname !== "/" && <Nav onSearch={onSearch} logout={logout} />}
+      {pathname !== "/" && <Nav onSearch={onSearch} random={random} logout={logout} />}
       <Routes>
         <Route path="/" element={<Form login={login} />} />
         <Route

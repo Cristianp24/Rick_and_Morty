@@ -1,17 +1,16 @@
 import axios from 'axios';
 
 
-export const addFav = (character) => {
+export const addFav = char =>{
     const endpoint = 'http://localhost:3001/rickandmorty/fav';
-    return async  (dispatch) => {
-       let response = await axios.post(endpoint, character)
-          return dispatch({
-             type: 'ADD_FAV',
-             payload: response.data, 
-          });
-    
+    return async (dispatch) => {
+        let response = await axios.post(endpoint, char);
+        return dispatch({
+            type: 'ADD_FAV',
+            payload: response.data,
+        });
     };
- };
+};
  
 
 

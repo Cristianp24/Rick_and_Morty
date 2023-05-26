@@ -1,0 +1,16 @@
+.select {
+color: green;
+}
+
+.home {
+    background-color: transparent;
+    color: green;
+    text-decoration:underline;
+   
+
+
+}
+.home:hover{
+    background-color: transparent;
+    color:red
+}

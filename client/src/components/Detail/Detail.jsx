@@ -1,47 +1,45 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import style from './Detail.module.css'
 
 
+export default function Detail(){
 
-export default function Detail () {
-  const { detailId } = useParams();
-  const navigate = useNavigate();
-  const [characters, setCharacter] = useState({});
-   
+    const [character, setCharacter] = useState({})
 
-    function navegar() {
-    navigate('/home');
-  }
-   
+    const { detailId } = useParams();
+
     useEffect(() => {
-        fetch(`http://localhost:3001/rickandmorty/character/:${detailId}`)
+        fetch(`http://localhost:3001/rickandmorty/character/${detailId}`)
           .then((response) => response.json())
           .then((char) => {
             if (char.name) {
-               //  console.log(char)
-              setCharacter(char); //{info personaje}
+                console.log(char)
+              setCharacter(char);
             } else {
               window.alert("No hay personajes con ese ID");
             }
           })
-          .catch((err) => {
+          .catch((error) => {
             window.alert("No hay personajes con ese ID");
           });
         return setCharacter({});
       }, [detailId]);
-
-    return (
-         <div>
-            <button  onClick={navegar}  >Ir a Home</button>
-         
-            <h1>Name: {characters.name}</h1>
-            <div>
-                <h2>STATUS: {characters.status}</h2>
-                <h2>ESPECIE: {characters.species}</h2>
-                <h2>GÉNERO: {characters.gender}</h2>
-                <h2>ORIGEN: {characters.origin?.name}</h2>
+      
+    return(
+        <div className={style.detail}>
+          <div >
+            <Link to='/home' ><button>To Home</button></Link>
+            <div  >
+              <h1 className={style.datos}>Name:{character.name}</h1>
+              <h2 className={style.datos}>Gender:{character.gender}</h2>
+              <h2 className={style.datos}>Status:{character.status}</h2>
+              <h2 className={style.datos}>Origin:{character.origin?.name}</h2>
+              <img className={style.image}src={character.image} alt='not found'/>
             </div>
-            <img src={characters.image} alt="img not found"/>
+          </div>
         </div>
     )
 }
