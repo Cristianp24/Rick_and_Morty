@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import style from './Detail.module.css'
 
 
+
 export default function Detail(){
 
     const [character, setCharacter] = useState({})
@@ -30,13 +31,13 @@ export default function Detail(){
       
     return(
         <div className={style.detail}>
-          <div >
-            <Link to='/home' ><button>To Home</button></Link>
+          <div > 
+            <Link to='/home' ><button className={style.btn}>To Home</button></Link>
             <div  >
               <h1 className={style.datos}>Name:{character.name}</h1>
-              <h2 className={style.datos}>Gender:{character.gender}</h2>
-              <h2 className={style.datos}>Status:{character.status}</h2>
-              <h2 className={style.datos}>Origin:{character.origin?.name}</h2>
+              <h2 className={style.datos}>Gender: {character.gender}</h2>
+              <h2 className={style.datos}>Status: {character.status}</h2>
+              <h2 className={style.datos}>Origin: {character.origin?.name}</h2>
               <img className={style.image}src={character.image} alt='not found'/>
             </div>
           </div>

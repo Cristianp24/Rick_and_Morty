@@ -38,7 +38,7 @@ export function Card(props) {
       <button className={style.btnx} onClick={() => onClose(props.id)}>
         X
       </button>
-      <Link to={`/detail/${props.id}`}>
+      <Link className={style.link}to={`/detail/${props.id}`}>
       <h2 className={style.name}>{props.name}</h2>
       </Link>
       <img

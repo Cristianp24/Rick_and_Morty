@@ -50,8 +50,8 @@ const Form = ({ login }) => {
           ) : (
             <p className={styles.error}>{errors.e3}</p>
           )}
-        </div>
-        <div className={styles.form}>
+        
+        
           <label className={styles.label} htmlFor="password">
             Password:
           </label>
@@ -63,10 +63,11 @@ const Form = ({ login }) => {
             placeholder="Password"
           />
           {errors.p1 ? <p className={styles.error}>{errors.p1}</p> : <p className={styles.error}>{errors.p2}</p>}
-        </div>
+        
         <button className={styles.boton} type="submit" onClick={handleSubmit}>
           Login
         </button>
+        </div>
       </form>
     </div>
   )

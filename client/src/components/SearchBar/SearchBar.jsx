@@ -8,10 +8,10 @@ export default function SearchBar(props) {
       setCharacter(e.target.value);
    }
    return (
-      <div>
-          <input className={styles.input} placeholder="...Introduzca aqui su ID!"type='search'value={character}onChange={handleChange} />
-          
-      <button className={styles.boton} onClick={() => onSearch(character)}>Agregar</button>
+      <div className={styles.div}>
+          <input className={styles.search} placeholder="  Introduzca ID!..."type='search'value={character}onChange={handleChange} />
+      
+      <button  className={styles.buttonSearch} onClick={() => onSearch(character)}>Agregar</button>
       </div>
    );
 }

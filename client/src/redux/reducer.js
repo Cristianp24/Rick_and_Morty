@@ -8,7 +8,7 @@ const reducer = (state = initialState, { type, payload }) => {
 
     case 'REMOVE_FAVORITE':
 
-    return { ...state, myFavorites: payload };
+    return { ...state, myFavorites: payload , allCharacters: payload};
 
     case 'FILTER':
       let filtro = [...state.allCharacters].filter((char) => {
